@@ -45,5 +45,4 @@ $(BUILD_DIR):
 # Clean all build artifacts
 clean:
 	@echo Deleting $(BUILD_DIR)
-	@rm $(SRC_DIR)/*.c
 	@rm -rf $(BUILD_DIR)
