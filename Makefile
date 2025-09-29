@@ -25,7 +25,7 @@ OBJ = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
 all: test
 
 test: $(TARGET)
-	@LD_LIBRARY_PATH=$(BUILD_DIR) /home/mvojtko/FIIT_OS_PAGE_TEST/build/os 
+	@LD_LIBRARY_PATH=$(BUILD_DIR) /ws/FIIT_OS_PAGE_TEST/build/os 
 
 # Build the shared library
 $(TARGET): $(OBJ) | $(BUILD_DIR)
@@ -44,5 +44,6 @@ $(BUILD_DIR):
 
 # Clean all build artifacts
 clean:
-	@echo Deleting $@
+	@echo Deleting $(BUILD_DIR)
+	@rm $(SRC_DIR)/*.c
 	@rm -rf $(BUILD_DIR)
