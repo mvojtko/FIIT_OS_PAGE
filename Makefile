@@ -17,6 +17,7 @@ TARGET = $(BUILD_DIR)/libospager.so
 
 # Source files
 SRC = $(wildcard $(SRC_DIR)/*.c)
+HDR = $(wildcard $(SRC_DIR)/*.h)
 
 # Object files
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
@@ -33,7 +34,7 @@ $(TARGET): $(OBJ) | $(BUILD_DIR)
 	@$(CC) $(LDFLAGS) -o $@ $^
 
 # Compile library source files to object files
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(HDR) | $(BUILD_DIR)
 	@echo Compiling $<
 	@$(CC) $(CFLAGS) -c $< -o $@
 
