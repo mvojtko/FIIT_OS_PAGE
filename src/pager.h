@@ -2,23 +2,20 @@
 
 #include <stdint.h>
 
-typedef struct tPage_table_entry
-{
-    uint8_t r : 1;     // read access
-    uint8_t w : 1;     // write access
-    uint8_t x : 1;     // execute access
-    uint8_t p_bit : 1; // page present in ram
-    uint8_t r_bit : 1; // page was referenced
-    uint8_t m_bit : 1; // page modified
-    uint16_t frame_id;
-} tPage_table_entry;
+// pager works with m_bit and r_bit of the page table entry.
+// the algorithm has:
+//   - behavior as described for NRU (not-recently-used) (4 classes)
+//   - local scope i.e. it may select as victim only frames owned by the task
+//   - respects task's max_frames setting if configured
+//   - during page_fault execution any modified page of task is first written to task's address-space
+//   - during page_fault execution r_bit and m_bit of all task's pages are reset
 
-// function loads page content to ram
+// function loads page content in tasks address_space to ram
 //   pid        - task identification
-//   page_id    - page id loaded to ram
-//   data       - page data loaded to ram
+//   virtual_address  - start of page that will be loaded to ram
 //   returns:  0 - success
-//            -1 - out of page frames
-//            -2 - segmentation fault
-//            -3 - task not found
-int load_page(int pid, uint16_t page_id, void *data);
+//            -1 - task not found
+//            -2 - page already in ram
+//            -3 - out of resources
+//            -4 - segmentation fault
+int page_fault(int pid, uint16_t virtual_address);

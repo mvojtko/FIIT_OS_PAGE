@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -fPIC -Wall -Wextra -O2 -Isrc \
+CFLAGS = -fPIC -Werror -Wall -Wextra -O2 -Isrc \
 		 -Dmalloc=__forbidden_malloc \
 		 -Dcalloc=__forbidden_calloc \
 		 -Drealloc=__forbidden_realloc \
