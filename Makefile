@@ -38,8 +38,9 @@ all: test
 # Create zip
 .PHONY: zip
 zip: $(BUILD_DIR)
+	@echo "Creating: $(BUILD_DIR)/$(AIS_LOGIN)_$(AIS_ID).zip"
 	@rm -f *.zip
-	@zip -r $(BUILD_DIR)/$(AIS_LOGIN)_$(AIS_ID).zip src
+	@zip -r "$(BUILD_DIR)/$(AIS_LOGIN)_$(AIS_ID).zip" src
 
 else
 .PHONY: all
