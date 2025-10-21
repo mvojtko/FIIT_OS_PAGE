@@ -58,6 +58,7 @@ help:
 	@echo "make     - build project and run tests"
 	@echo "make all - build project and run tests"
 	@echo "make zip - creates build/<AIS_LOGIN>_<AIS_ID>.zip file that may be copied to ais"
+	@echo "make clean - cleans build products"
 	@echo ""
 	@echo "make DEBUG=\"...\" - runs tests with extra parameters f.ex."
 	@echo ""
@@ -67,7 +68,7 @@ help:
 
 .PHONY: test
 test: $(TARGET)
-	@LD_LIBRARY_PATH=$(BUILD_DIR) /public/zadania/ram/os $(DEBUG)
+	@LD_LIBRARY_PATH=$(BUILD_DIR) /public/zadania/os $(DEBUG)
 
 # Build the shared library
 $(TARGET): $(OBJ) | $(BUILD_DIR)
