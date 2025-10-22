@@ -45,7 +45,7 @@
 * Vytvorený archív si stiahnite do svojho počítača a odovzdajte do pripraveného miesta odovzdania v AIS.
   * Archív musí byť v uvedenom formáte. Nesplnenie formátu môže viesť k udeleniu 0 bodov.
 * Na stiahnutie archívu použite príkaz `scp` alebo jeho ekvivalent.
-* Úspešné vykonanie všetkých testov **nevihnutne negarantuje** udelenie 100% hodnotenia zadania.
+* Úspešné vykonanie všetkých testov **negarantuje** udelenie 100% hodnotenia zadania.
 
 ## Riešenie problémov
 
@@ -101,7 +101,7 @@
 * Download the generated archive to your computer and submit it to the designated submission area in AIS.
     * Archive has to be in defined format. Wrong format may result in receiving 0 points.
 * Use the `scp` command or its equivalent to download the archive.
-* Successful execution of all tests does **not necessarily guarantee** a 100% score for the assignment.
+* Successful execution of all tests does **not guarantee** a 100% score for the assignment.
 
 ## Troubleshooting
 
