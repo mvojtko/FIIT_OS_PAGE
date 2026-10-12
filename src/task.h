@@ -37,6 +37,7 @@ const tTaskMgr *get_taskMgr();
 //   - Sets the parent process ID to the given ppid.
 //   - Sets the user ID to the given uid.
 //   - Sets the priority to the given priority.
+//   - Sets start_time from the current total runtime.
 //   - Sets all other fields to default values.
 // Returns:
 //    PID on success.
