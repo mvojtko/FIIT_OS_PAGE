@@ -21,7 +21,7 @@ int init_taskMgr(tTaskMgr *task_mgr);
 
 // Destroys the task manager and releases all resources.
 // This function:
-//   - Clears stored pointer to the sigltone task manager.
+//   - Clears stored pointer to the singleton task manager.
 void destroy_taskMgr();
 
 // Returns a pointer to the task manager.
@@ -33,7 +33,7 @@ const tTaskMgr *get_taskMgr();
 // Creates a new task in memory.
 // This function:
 //   - Finds and fills a tTaskStruct entry in the task manager.
-//   - Assigns a PID to the task.
+//   - Assigns a PID to the task. Any free pid has to be assigned to the new task.
 //   - Sets the parent process ID to the given ppid.
 //   - Sets the user ID to the given uid.
 //   - Sets the priority to the given priority.
@@ -52,9 +52,10 @@ tPid create_task(uint8_t priority, tPid ppid, uint8_t uid);
 //   - Marks the corresponding tTaskStruct entry in the task manager TASK_STATE_TERMINATED
 //   - Stores exit code to its tTaskStruct entry.
 //   - Signals parent process that the child has been destroyed. TASK_SIG_CHILD
+//   - Allowed on any task but task 0
 // Returns:
 //    0  Success.
-//   -1  Task does not exist or it is a Zombie task.
+//   -1  Task does not exist or it is a Zombie task or it is the task 0.
 //   -3  The system was not initialized.
 int terminate_task(tPid pid, int exit_code);
 
@@ -64,7 +65,7 @@ int terminate_task(tPid pid, int exit_code);
 //   - Allowed on any task but task 0, even if it is a Zombie task.
 // Returns:
 //    0  Success.
-//   -1  Task does not exist
+//   -1  Task does not exist or it is the task 0.
 //   -3  The system was not initialized.
 int destroy_task(tPid pid);
 

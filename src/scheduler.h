@@ -54,7 +54,7 @@ int32_t get_total_runtime();
 //   - scheduler ignores blocked or zombie tasks.
 //   - scheduler simulates resolution of task signals.
 //      - If a task has sig_child it destroys only the zombie children of that task.
-//      - If a task has sig_term it terminates itself.
+//      - If a task has sig_term it terminates itself. task 0 cannot be terminated.
 // Returns:
 //   - The PID of the next task to run.
 //   - -1 if no task is available to run.

@@ -18,7 +18,7 @@ SRC_DIR = src
 BUILD_DIR = build
 
 # Output targets
-TARGET = $(BUILD_DIR)/libospager.so
+TARGET = $(BUILD_DIR)/libos.so
 
 # Source files
 SRC = $(wildcard $(SRC_DIR)/*.c)

@@ -2,7 +2,6 @@
 
 * Implementujte dynamickú knižnicu riadiacu plánovanie procesov výpočtového systému.
 * Vypracované zadanie musí byť **kompilovateľné, spustiteľné a testovateľné** na vami pridelenom stroji v stave, v akom ste ho dostali na začiatku semestra.
-* Za zmenu inštalovaného kompilátora alebo iných nástrojov potrebných na zostavenie zadania zodpovedajú pridelení študenti.
 
 ## Mapa projektu
 
@@ -24,8 +23,10 @@
 * V prípade, že na vypracovanie zadania potrebujete ďalšie verejné funkcie, vytvorte si pre ne nový *.h* súbor. Existujúce *.h* súbory **neupravujte**.
 * Odporúčame najprv implementovať prazdne telá chýbajúcich funkcii.
 * Pracujte v malych prírastkoch aby ste vedeli identifikovat prípadné chyby skoro.
-* Ošetrite aj hraničné prípady. Napr. v prípade, že sa stav úloh a ram nezmestí do pridelenej pamäte musí knižnica vrátiť chybu.
-* Lokálne premenné vytvárané vo funkciách nemusia byť uložené v ram.
+* Použite napríklad nástroj git na riadenie verzií vypracovania.
+* Ošetrite aj hraničné prípady. Napr. v prípade, že sa stav úloh nezmestií do pridelenej pamäte musí knižnica vrátiť chybu.
+* Môžete používať lokálne premenné vytvárané vo funkciách.
+* Môžete používať globálne premenné.
 * Nesmiete použiť žiadnu alokačnú funkciu ako je malloc, alloc...
 * Neodkladajte vypracovanie zadania na poslednú chvýľu pretože:
   * V prípade otázok môžete ku koncu semestra dostavať odpovede oneskorene.
@@ -55,7 +56,6 @@
 
 * Implement a dynamic library that schedules processes of the computational system.
 * The completed assignment must be **compilable, executable, and testable** on the machine assigned to you, in the same state as it was at the beginning of the semester.
-* Any changes to the installed compiler or other tools required to build the assignment are the responsibility of the assigned students.
 
 ## Project Structure
 
@@ -77,8 +77,10 @@
 * If you need additional public functions to complete the assignment, create a new *.h* file for them. **Do not modify** the existing *.h* files.
 * It is recommended to first implement empty bodies for the missing functions.
 * Work in small increments so that you can identify potential errors early.
-* Handle edge cases as well. For example, if the state of tasks and RAM cannot fit into the allocated memory, the software must return an error.
-* Local variables created within functions do not need to be stored in RAM.
+* Use versioning software as is git to keep track of your changes.
+* Handle edge cases as well. For example, if the state of tasks cannot fit into the given memory, the software must return an error.
+* Local variables may be used.
+* Global variables may be used.
 * You must not use any allocation functions such as `malloc`, `alloc`, etc.
 * Do not postpone working on the assignment until the last moment because:
   * Toward the end of the semester, responses to your questions may be delayed.
